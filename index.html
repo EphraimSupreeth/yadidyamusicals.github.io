@@ -180,6 +180,7 @@
     <nav>
         <a href="#" data-target="home">Home</a>
         <a href="#" data-target="about">About</a>
+        <a href="#" data-target="online-classes">Online Classes</a>
         <a href="#" data-target="enquiry">Enquiry</a>
         <a href="#" data-target="gallery">Gallery</a>
         <a href="#" data-target="contact">Contact</a>
@@ -228,7 +229,15 @@
         <div class="section-divider"></div>
         <div class="content-box">
             <h3>Learn Music Your Way: Flexible Online & In-Home Guitar and Keyboard Lessons</h3>
-            <p>Experience personalized music education that fits your schedule and lifestyle. Whether you prefer learning from the comfort of your home through live online sessions or having an instructor come to you for in-person lessons, we bring quality guitar and keyboard training directly to you. Perfect for busy students, working professionals, or anyone in Visakhapatnam seeking convenient, one-on-one musical instruction.</p>
+            <p>Experience personalized music education that fits your schedule and lifestyle. Whether you prefer learning from the comfort of your home through live online sessions—accessible from any city with your own instrument—or having an instructor come to you for in-person lessons in Visakhapatnam, we bring quality guitar and keyboard training directly to you. Perfect for busy students, working professionals, or anyone seeking convenient, one-on-one musical instruction tailored to your pace and goals.</p>
+        </div>
+    </section>
+    <section id="online-classes">
+        <h2>Online Classes</h2>
+        <div class="section-divider"></div>
+        <div class="content-box">
+            <h3>Learn Music Your Way: Flexible Online & In-Home Guitar and Keyboard Lessons</h3>
+            <p>Experience personalized music education that fits your schedule and lifestyle. Whether you prefer learning from the comfort of your home through live online sessions—accessible from any city with your own instrument—or having an instructor come to you for in-person lessons in Visakhapatnam, we bring quality guitar and keyboard training directly to you. Perfect for busy students, working professionals, or anyone seeking convenient, one-on-one musical instruction tailored to your pace and goals.</p>
         </div>
     </section>
     <section id="about">
@@ -325,7 +334,7 @@
         // Go to Online & In-Home section function
         function goToOnlineInHome(){
             sections.forEach(sec=>sec.classList.remove('active'));
-            document.getElementById('online-inhome').classList.add('active');
+            document.getElementById('online-classes').classList.add('active');
             window.scrollTo({top:0,behavior:'smooth'});
         }
     </script>
