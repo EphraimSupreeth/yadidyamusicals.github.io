@@ -180,6 +180,7 @@
     <nav>
         <a href="#" data-target="home">Home</a>
         <a href="#" data-target="about">About</a>
+        <a href="#" data-target="music-instructors">Music Instructors</a>
         <a href="#" data-target="online-classes">Online Classes</a>
         <a href="#" data-target="enquiry">Enquiry</a>
         <a href="#" data-target="gallery">Gallery</a>
@@ -243,15 +244,19 @@
     <section id="about">
         <h2>About Us</h2>
         <div class="section-divider"></div>
+        <p style="margin-top:40px">Yadidya Musicals offers professional guitar and keyboard lessons for children and adults in Visakhapatnam, Andhra Pradesh. Guided by faith and passion for music, the school provides both in-home and online classes, bringing quality music education to every learner.</p>
+    </section>
+    <section id="music-instructors">
+        <h2>Music Instructors</h2>
+        <div class="section-divider"></div>
         <div class="founder-section">
-            <img src="founder-photo.jpg" alt="Mr. Samuel Yadidya" class="founder-photo">
+            <img src="MAHHZZL6ST4" alt="Mr. Samuel Yadidya" class="founder-photo">
             <div class="founder-info">
                 <h3>Mr. Samuel Yadidya</h3>
                 <p>Founder and Lead Instructor</p>
                 <p style="margin-top:15px">With years of experience in music education, Mr. Samuel Yadidya founded Yadidya Musicals in 2024 to share his passion for guitar and keyboard with students of all ages. His personalized teaching approach helps each student discover their unique musical voice.</p>
             </div>
         </div>
-        <p style="margin-top:40px">Yadidya Musicals offers professional guitar and keyboard lessons for children and adults in Visakhapatnam, Andhra Pradesh. Guided by faith and passion for music, the school provides both in-home and online classes, bringing quality music education to every learner.</p>
     </section>
     <section id="enquiry">
         <h2>Enquiry</h2>
@@ -327,7 +332,7 @@
         // Go to Keyboard Classes section function
         function goToKeyboardClasses(){
             sections.forEach(sec=>sec.classList.remove('active'));
-            document.getElementById('keyboard-classes').classList.add('active');
+            document.getElementById('keyboard-classes').classList.add('active);
             window.scrollTo({top:0,behavior:'smooth'});
         }
         
