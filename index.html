@@ -200,7 +200,7 @@
                 <h3>Keyboard Classes</h3>
                 <p>Learn piano and keyboard fundamentals with expert guidance.</p>
             </div>
-            <div class="feature-card">
+            <div class="feature-card" onclick="goToOnlineInHome()">
                 <span class="icon">💻</span>
                 <h3>Online & In-Home</h3>
                 <p>Flexible learning options with both virtual and in-person sessions available.</p>
@@ -221,6 +221,14 @@
         <div class="content-box">
             <h3>Master the Keyboard from Day One: Beginner Classes in Music Theory, Keyboard Fundamentals, Chords & Melodies</h3>
             <p>Learn to read music notation, build a strong foundation in keyboard technique, and start playing beautiful chords and melodies from your very first lesson—absolutely no experience required. Ideal for aspiring worship musicians, creative enthusiasts, or anyone in Visakhapatnam eager to bring music to life through the keys.</p>
+        </div>
+    </section>
+    <section id="online-inhome">
+        <h2>Online & In-Home</h2>
+        <div class="section-divider"></div>
+        <div class="content-box">
+            <h3>Learn Music Your Way: Flexible Online & In-Home Guitar and Keyboard Lessons</h3>
+            <p>Experience personalized music education that fits your schedule and lifestyle. Whether you prefer learning from the comfort of your home through live online sessions or having an instructor come to you for in-person lessons, we bring quality guitar and keyboard training directly to you. Perfect for busy students, working professionals, or anyone in Visakhapatnam seeking convenient, one-on-one musical instruction.</p>
         </div>
     </section>
     <section id="about">
@@ -311,6 +319,13 @@
         function goToKeyboardClasses(){
             sections.forEach(sec=>sec.classList.remove('active'));
             document.getElementById('keyboard-classes').classList.add('active');
+            window.scrollTo({top:0,behavior:'smooth'});
+        }
+        
+        // Go to Online & In-Home section function
+        function goToOnlineInHome(){
+            sections.forEach(sec=>sec.classList.remove('active'));
+            document.getElementById('online-inhome').classList.add('active');
             window.scrollTo({top:0,behavior:'smooth'});
         }
     </script>
