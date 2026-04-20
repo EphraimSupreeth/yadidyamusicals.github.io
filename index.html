@@ -35,7 +35,14 @@
         h2{text-align:center;color:#79b65e;margin-bottom:30px;font-family:'Open Sans',sans-serif;font-weight:700;font-size:2em;position:relative;display:inline-block;width:100%;animation:slideIn 0.6s ease;letter-spacing:0.5px;text-transform:uppercase}
         @keyframes slideIn{from{opacity:0;transform:translateX(-50px)}to{opacity:1;transform:translateX(0)}}
         
+        h3{color:#79b65e;font-size:1.5em;margin-bottom:20px;font-family:'Open Sans',sans-serif;font-weight:700;text-align:center}
+        
         p{text-align:center;line-height:1.8;color:#d0d8df;font-size:1.05em;font-weight:400}
+        
+        /* Professional Content Box */
+        .content-box{background:rgba(30,42,51,0.5);padding:35px 30px;border-radius:15px;border:2px solid rgba(121,182,94,0.3);box-shadow:0 8px 25px rgba(0,0,0,0.3);margin:30px auto;max-width:900px;transition:all 0.3s ease}
+        .content-box:hover{box-shadow:0 12px 35px rgba(121,182,94,0.4);border-color:#79b65e;transform:translateY(-5px)}
+        .content-box p{text-align:left;line-height:1.9;font-size:1.1em}
         
         /* Professional Founder Section */
         .founder-section{display:flex;align-items:center;gap:40px;margin:40px auto;max-width:900px;flex-wrap:wrap;justify-content:center;animation:fadeIn 1s ease;background:rgba(30,42,51,0.4);padding:40px;border-radius:15px;border:1px solid rgba(121,182,94,0.2);box-shadow:0 8px 30px rgba(0,0,0,0.3)}
@@ -43,7 +50,7 @@
         .founder-photo:hover{transform:scale(1.08) rotate(3deg);box-shadow:0 12px 35px rgba(121,182,94,0.6)}
         
         .founder-info{flex:1;min-width:280px;text-align:left}
-        .founder-info h3{color:#79b65e;margin-bottom:12px;font-family:'Open Sans',sans-serif;font-size:1.6em;font-weight:700}
+        .founder-info h3{color:#79b65e;margin-bottom:12px;font-family:'Open Sans',sans-serif;font-size:1.6em;font-weight:700;text-align:left}
         .founder-info p{text-align:left;color:#d0d8df;line-height:1.8}
         
         /* Professional Form Container */
@@ -73,7 +80,7 @@
         
         /* Professional Features Section */
         .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin:50px auto;max-width:1100px}
-        .feature-card{background:rgba(30,42,51,0.6);padding:35px 25px;border-radius:15px;text-align:center;transition:all 0.4s ease;border:2px solid rgba(121,182,94,0.2);box-shadow:0 6px 20px rgba(0,0,0,0.3);position:relative;overflow:hidden}
+        .feature-card{background:rgba(30,42,51,0.6);padding:35px 25px;border-radius:15px;text-align:center;transition:all 0.4s ease;border:2px solid rgba(121,182,94,0.2);box-shadow:0 6px 20px rgba(0,0,0,0.3);position:relative;overflow:hidden;cursor:pointer}
         .feature-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,#79b65e,#6a9f52);transform:scaleX(0);transition:transform 0.4s ease}
         .feature-card:hover::before{transform:scaleX(1)}
         .feature-card:hover{transform:translateY(-12px);box-shadow:0 12px 35px rgba(121,182,94,0.4);border-color:#79b65e;background:rgba(30,42,51,0.8)}
@@ -102,6 +109,10 @@
             
             section{padding:40px 15px}
             h2{font-size:1.5em;margin-bottom:20px}
+            h3{font-size:1.2em}
+            
+            .content-box{padding:25px 20px}
+            .content-box p{font-size:1em;text-align:left}
             
             .founder-section{padding:25px 20px;gap:25px}
             .founder-photo{width:150px;height:150px;border:4px solid #79b65e}
@@ -141,6 +152,10 @@
             
             section{padding:30px 12px}
             h2{font-size:1.3em}
+            h3{font-size:1.1em}
+            
+            .content-box{padding:20px 15px}
+            .content-box p{font-size:0.95em}
             
             .founder-photo{width:120px;height:120px}
             .founder-info h3{font-size:1.1em}
@@ -175,7 +190,7 @@
         <p>Learn guitar and keyboard with expert guidance from Mr. Samuel Yadidya. Explore lessons, make enquiries, and experience the joy of music through personalized training.</p>
         
         <div class="features-grid">
-            <div class="feature-card">
+            <div class="feature-card" onclick="goToGuitarLessons()">
                 <span class="icon">🎸</span>
                 <h3>Guitar Lessons</h3>
                 <p>Master acoustic guitar with personalized instruction for all skill levels.</p>
@@ -190,6 +205,14 @@
                 <h3>Online & In-Home</h3>
                 <p>Flexible learning options with both virtual and in-person sessions available.</p>
             </div>
+        </div>
+    </section>
+    <section id="guitar-lessons">
+        <h2>Guitar Lessons</h2>
+        <div class="section-divider"></div>
+        <div class="content-box">
+            <h3>Discover Guitar Mastery from the First Note: Beginner Classes in Music Notation, Guitar Basics, Chords & Melodies</h3>
+            <p>Unlock the language of music through essential notations, master guitar fundamentals, and play chords and melodies right away—no prior experience needed. Perfect for aspiring worship leaders, hobbyists, or anyone in Visakhapatnam ready to strum with confidence.</p>
         </div>
     </section>
     <section id="about">
@@ -266,6 +289,13 @@
         function goToEnquiry(){
             sections.forEach(sec=>sec.classList.remove('active'));
             document.getElementById('enquiry').classList.add('active');
+            window.scrollTo({top:0,behavior:'smooth'});
+        }
+        
+        // Go to Guitar Lessons section function
+        function goToGuitarLessons(){
+            sections.forEach(sec=>sec.classList.remove('active'));
+            document.getElementById('guitar-lessons').classList.add('active');
             window.scrollTo({top:0,behavior:'smooth'});
         }
     </script>
