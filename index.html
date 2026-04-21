@@ -7,10 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         *{box-sizing:border-box;margin:0;padding:0}
-        body{font-family:'DM Sans',sans-serif;background:#263640;color:#f5f5f5;scroll-behavior:smooth;overflow-x:hidden;line-height:1.7}
+        body{font-family:'DM Sans',sans-serif;background:#263640;color:#f5f5f5;scroll-behavior:smooth;overflow-x:hidden;line-height:1.7;position:relative}
+        
+        /* Guitar Background Pattern */
+        body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><g opacity="0.03" fill="%2379b65e"><path d="M100,20 Q110,40 100,60 Q90,40 100,20 M100,60 L100,140 M85,140 Q100,150 115,140 M70,80 L130,80 M70,90 L130,90 M70,100 L130,100 M70,110 L130,110 M70,120 L130,120"/></g></svg>');background-size:150px 150px;background-repeat:repeat;z-index:0;pointer-events:none;opacity:0.4}
         
         /* Professional Header with Gradient Overlay */
-        header{background:linear-gradient(135deg,#263640 0%,#1e2a33 100%);color:#fff;text-align:center;padding:60px 20px;border-bottom:3px solid #79b65e;position:relative;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
+        header{background:linear-gradient(135deg,#263640 0%,#1e2a33 100%);color:#fff;text-align:center;padding:60px 20px;border-bottom:3px solid #79b65e;position:relative;box-shadow:0 4px 20px rgba(0,0,0,0.3);z-index:1}
         header::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".1" fill="%2379b65e"/></svg>') no-repeat bottom;background-size:cover;opacity:0.1;pointer-events:none}
         header img{width:140px;height:auto;margin-bottom:20px;transition:transform 0.5s ease;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.3));animation:pulse 3s ease-in-out infinite}
         header img:hover{transform:rotate(360deg) scale(1.1)}
@@ -351,3 +354,4 @@
     </script>
 </body>
 </html>
+
