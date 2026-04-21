@@ -48,7 +48,6 @@
         .instructors-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin:40px auto;max-width:1100px}
         .instructor-card{display:flex;flex-direction:column;align-items:center;background:rgba(30,42,51,0.4);padding:35px 25px;border-radius:15px;border:2px solid rgba(121,182,94,0.2);box-shadow:0 8px 30px rgba(0,0,0,0.3);transition:all 0.4s ease;animation:fadeIn 1s ease}
         .instructor-card:hover{box-shadow:0 12px 35px rgba(121,182,94,0.4);border-color:#79b65e;transform:translateY(-8px)}
-        .instructor-card.no-photo{padding:40px 30px}
         .instructor-photo{width:180px;height:180px;border-radius:50%;object-fit:cover;border:5px solid #79b65e;box-shadow:0 8px 25px rgba(121,182,94,0.4);transition:all 0.5s ease;margin-bottom:20px;background:#1e2a33}
         .instructor-photo:hover{transform:scale(1.08) rotate(3deg);box-shadow:0 12px 35px rgba(121,182,94,0.6)}
         .instructor-info{text-align:center}
@@ -253,7 +252,8 @@
                     <p>Mr. Samuel Yadidya founded Yadidya Musicals in 2024 to share his passion for guitar and keyboard with students of all ages. His personalized teaching approach helps each student discover their unique musical voice.</p>
                 </div>
             </div>
-            <div class="instructor-card no-photo">
+            <div class="instructor-card">
+                <img src="./ramya-yadidya.jpg" alt="Ramya Yadidya" class="instructor-photo" onerror="this.style.display='none'">
                 <div class="instructor-info">
                     <h3>Ramya Yadidya</h3>
                     <p class="instructor-role">Admin</p>
@@ -336,3 +336,4 @@
     </script>
 </body>
 </html>
+
