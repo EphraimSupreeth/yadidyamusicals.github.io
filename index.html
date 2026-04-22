@@ -4,334 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yadidya Musicals | Equipping Young Musicians</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
     <style>
         *{box-sizing:border-box;margin:0;padding:0}
-        body{font-family:'Inter',sans-serif;background:linear-gradient(135deg,#f8f9fa 0%,#e9ecef 100%);color:#2c3e50;overflow-x:hidden;line-height:1.8}
+        body{font-family:'DM Sans',sans-serif;background:#263640;color:#f5f5f5;overflow-x:hidden;line-height:1.7}
         
-        /* Enhanced Professional Header */
-        header{background:linear-gradient(135deg,#2c5f2d 0%,#79b65e 100%);color:#fff;text-align:center;padding:80px 20px;position:relative;box-shadow:0 8px 30px rgba(0,0,0,0.15);overflow:hidden}
-        header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%);animation:headerPulse 15s ease-in-out infinite}
-        @keyframes headerPulse{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(5%,5%) scale(1.1)}}
+        /* Header */
+        header{background:linear-gradient(135deg,#263640 0%,#1e2a33 100%);color:#fff;text-align:center;padding:60px 20px;border-bottom:3px solid #79b65e;position:relative;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
+        header h1{font-family:'Open Sans',sans-serif;font-weight:700;font-size:3em;margin:0;letter-spacing:1px;text-shadow:2px 2px 4px rgba(0,0,0,0.3)}
+        header p{font-size:1.2em;color:#a8c0d0;margin-top:12px;font-weight:500}
         
-        header img{width:160px;height:auto;margin-bottom:25px;transition:all 0.6s ease;filter:drop-shadow(0 6px 12px rgba(0,0,0,0.3));position:relative;z-index:2}
-        header img:hover{transform:scale(1.15) rotate(5deg)}
-        
-        header h1{font-family:'Poppins',sans-serif;font-weight:700;font-size:3.5em;margin:0;letter-spacing:2px;text-shadow:3px 3px 6px rgba(0,0,0,0.3);position:relative;z-index:2}
-        header p{font-size:1.4em;color:#e8f5e9;margin-top:15px;font-weight:500;letter-spacing:1px;position:relative;z-index:2}
-        
-        /* Modern Friendly Navigation */
-        nav{background:rgba(255,255,255,0.98);backdrop-filter:blur(15px);display:flex;justify-content:center;align-items:center;gap:15px;padding:20px 30px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.1);border-bottom:3px solid #79b65e;flex-wrap:wrap}
-        nav a{color:#2c5f2d;text-decoration:none;font-weight:600;font-family:'Poppins',sans-serif;transition:all 0.3s ease;position:relative;padding:12px 24px;border-radius:25px;font-size:0.95em;letter-spacing:0.5px;white-space:nowrap;background:transparent;border:2px solid transparent}
-        nav a:hover{color:#fff;background:linear-gradient(135deg,#79b65e 0%,#2c5f2d 100%);border-color:#79b65e;transform:translateY(-3px);box-shadow:0 6px 20px rgba(121,182,94,0.4)}
-        nav a.active{background:linear-gradient(135deg,#79b65e 0%,#2c5f2d 100%);color:#fff;box-shadow:0 4px 15px rgba(121,182,94,0.3)}
-        
-        /* Enhanced Sections */
-        section{padding:80px 30px;max-width:1200px;margin:auto;display:none;animation:fadeInUp 0.8s ease;position:relative}
+        /* Navigation */
+        nav{background:rgba(30,42,51,0.95);backdrop-filter:blur(10px);display:flex;justify-content:center;align-items:center;gap:25px;padding:18px 20px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 15px rgba(0,0,0,0.4);border-bottom:1px solid rgba(121,182,94,0.2);flex-wrap:nowrap;overflow-x:auto}
+        nav a{color:#f5f5f5;text-decoration:none;font-weight:600;font-family:'Open Sans',sans-serif;transition:all 0.3s ease;padding:10px 18px;border-radius:8px;font-size:0.95em;cursor:pointer;white-space:nowrap}
+        nav a:hover{color:#79b65e;background:rgba(121,182,94,0.08)}
+
+        /* Sections */
+        section{padding:60px 20px;max-width:1100px;margin:auto;display:none;animation:fadeIn 0.8s ease}
         section.active{display:block}
-        @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
         
-        /* Beautiful Headings */
-        h2{text-align:center;color:#2c5f2d;margin-bottom:20px;font-family:'Poppins',sans-serif;font-weight:700;font-size:2.8em;position:relative;display:inline-block;width:100%;letter-spacing:1px}
-        h2::after{content:'';position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);width:100px;height:5px;background:linear-gradient(90deg,#79b65e,#2c5f2d);border-radius:3px}
+        h2{text-align:center;color:#79b65e;margin-bottom:30px;font-family:'Open Sans',sans-serif;font-weight:700;font-size:2em;text-transform:uppercase}
+        .section-divider{width:80px;height:4px;background:linear-gradient(90deg,#79b65e,#6a9f52);margin:10px auto 30px;border-radius:2px}
         
-        h3{color:#2c5f2d;font-size:1.6em;margin-bottom:20px;font-family:'Poppins',sans-serif;font-weight:600;text-align:center}
+        /* Cards & Content */
+        .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin:40px 0}
+        .feature-card{background:rgba(30,42,51,0.6);padding:35px 25px;border-radius:15px;text-align:center;transition:0.4s;border:2px solid rgba(121,182,94,0.2);cursor:pointer}
+        .feature-card:hover{transform:translateY(-10px);border-color:#79b65e;background:rgba(30,42,51,0.8)}
+        .feature-card .icon{font-size:3em;display:block;margin-bottom:15px}
+
+        .content-box{background:rgba(30,42,51,0.5);padding:35px 30px;border-radius:15px;border:2px solid rgba(121,182,94,0.3);margin:20px auto;max-width:900px}
         
-        p{text-align:center;line-height:2;color:#495057;font-size:1.15em;font-weight:400}
-        
-        /* Premium Content Box */
-        .content-box{background:#fff;padding:45px 40px;border-radius:20px;border:none;box-shadow:0 10px 40px rgba(0,0,0,0.08);margin:50px auto;max-width:950px;transition:all 0.4s ease;position:relative;overflow:hidden}
-        .content-box::before{content:'';position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(180deg,#79b65e,#2c5f2d)}
-        .content-box:hover{box-shadow:0 15px 50px rgba(121,182,94,0.25);transform:translateY(-8px)}
-        .content-box p{text-align:left;line-height:2;font-size:1.15em;color:#495057}
-        .content-box h3{color:#2c5f2d;margin-bottom:25px}
-        
-        /* Premium Instructor Cards */
-        .instructors-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;margin:60px auto;max-width:1200px}
-        .instructor-card{display:flex;flex-direction:column;align-items:center;background:#fff;padding:45px 35px;border-radius:25px;box-shadow:0 10px 40px rgba(0,0,0,0.08);transition:all 0.5s ease;position:relative;overflow:hidden}
-        .instructor-card::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#79b65e,#2c5f2d);transform:scaleX(0);transition:transform 0.5s ease}
-        .instructor-card:hover::before{transform:scaleX(1)}
-        .instructor-card:hover{box-shadow:0 15px 50px rgba(121,182,94,0.25);transform:translateY(-12px)}
-        
-        .instructor-photo-wrapper{width:200px;height:200px;border-radius:50%;border:6px solid #79b65e;box-shadow:0 10px 30px rgba(121,182,94,0.3);transition:all 0.6s ease;margin-bottom:25px;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative}
-        .instructor-photo-wrapper:hover{transform:scale(1.1);box-shadow:0 15px 40px rgba(121,182,94,0.5);border-color:#2c5f2d}
-        
-        .instructor-photo{width:100%;height:100%;object-fit:cover;display:block}
-        .instructor-photo.hidden{display:none}
-        
-        .instructor-info{text-align:center}
-        .instructor-info h3{color:#2c5f2d;margin-bottom:10px;font-family:'Poppins',sans-serif;font-size:1.5em;font-weight:700}
-        .instructor-info p{color:#6c757d;line-height:1.9;font-size:1.05em;margin-top:12px}
-        .instructor-role{color:#79b65e;font-size:1.1em;font-weight:600;margin-bottom:12px;text-transform:uppercase;letter-spacing:1px}
-        
-        /* Premium Form Container */
-        .form-container{max-width:900px;margin:50px auto;background:#fff;padding:40px;border-radius:25px;box-shadow:0 10px 40px rgba(0,0,0,0.08);transition:all 0.5s ease}
-        .form-container:hover{box-shadow:0 15px 50px rgba(121,182,94,0.25);transform:translateY(-8px)}
-        .form-container iframe{border-radius:15px;width:100%;min-height:1691px;border:none}
-        
-        /* Premium Contact Info */
-        .contact-info{max-width:750px;margin:50px auto;text-align:center}
-        .contact-info p{margin:25px 0;font-size:1.15em;padding:25px 30px;background:#fff;border-radius:15px;transition:all 0.4s ease;box-shadow:0 6px 25px rgba(0,0,0,0.08);border-left:6px solid #79b65e;cursor:pointer}
-        .contact-info p:hover{background:linear-gradient(135deg,#e8f5e9,#fff);transform:translateX(15px);box-shadow:0 10px 35px rgba(121,182,94,0.25)}
-        .contact-info p strong{color:#2c5f2d;font-weight:700}
-        .location-link::after{content:'📍';margin-left:10px;font-size:1.2em}
-        .enquiry-link::after{content:'✉️';margin-left:10px;font-size:1.2em}
-        
-        /* Premium Gallery */
-        .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:50px}
-        .gallery-item{position:relative;overflow:hidden;border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,0.1);transition:all 0.5s ease;background:#fff}
-        .gallery img{width:100%;height:280px;object-fit:cover;border-radius:20px;transition:all 0.6s ease;display:block}
-        .gallery-item:hover img{transform:scale(1.12);filter:brightness(1.1)}
-        .gallery-item:hover{box-shadow:0 15px 45px rgba(121,182,94,0.35);transform:translateY(-10px)}
-        .gallery-item::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to top,rgba(44,95,45,0.6),transparent);opacity:0;transition:opacity 0.4s ease;border-radius:20px}
+        /* Gallery */
+        .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+        .gallery-item{position:relative;overflow:hidden;border-radius:15px;box-shadow:0 6px 20px rgba(0,0,0,0.3)}
+        .gallery img{width:100%;height:250px;object-fit:cover;transition:0.5s;display:block}
+        .gallery-item:hover img{transform:scale(1.1)}
+        .gallery-item::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to top,rgba(121,182,94,0.3),transparent);opacity:0;transition:0.3s}
         .gallery-item:hover::after{opacity:1}
-        
-        /* Premium Features Grid */
-        .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:35px;margin:60px auto;max-width:1200px}
-        .feature-card{background:#fff;padding:45px 35px;border-radius:25px;text-align:center;transition:all 0.5s ease;box-shadow:0 8px 30px rgba(0,0,0,0.08);position:relative;overflow:hidden;cursor:pointer;border:2px solid transparent}
-        .feature-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:6px;background:linear-gradient(90deg,#79b65e,#2c5f2d);transform:scaleX(0);transition:transform 0.5s ease}
-        .feature-card:hover::before{transform:scaleX(1)}
-        .feature-card:hover{transform:translateY(-15px);box-shadow:0 15px 50px rgba(121,182,94,0.3);border-color:#79b65e}
-        .feature-card .icon{font-size:3.5em;margin-bottom:20px;display:block;filter:drop-shadow(0 6px 12px rgba(121,182,94,0.3));transition:transform 0.4s ease}
-        .feature-card:hover .icon{transform:scale(1.15) rotate(5deg)}
-        .feature-card h3{color:#2c5f2d;margin-bottom:18px;font-size:1.4em;font-weight:700;font-family:'Poppins',sans-serif;letter-spacing:0.5px}
-        .feature-card p{color:#6c757d;font-size:1.05em;line-height:1.8;font-weight:400}
-        
-        /* Premium Divider */
-        .section-divider{width:100px;height:5px;background:linear-gradient(90deg,#79b65e,#2c5f2d);margin:40px auto;border-radius:3px;box-shadow:0 3px 10px rgba(121,182,94,0.4)}
-        
-        /* Premium Footer */
-        footer{text-align:center;padding:50px 30px;background:linear-gradient(135deg,#2c5f2d 0%,#79b65e 100%);color:#e8f5e9;margin-top:80px;font-size:1.05em;position:relative;border-top:5px solid #79b65e;box-shadow:0 -8px 30px rgba(0,0,0,0.15)}
-        footer p{font-weight:500;letter-spacing:0.5px;margin-top:12px;font-size:1em;line-height:1.8}
-        footer .footer-logo{font-size:1.8em;color:#fff;margin-bottom:15px;font-weight:700;font-family:'Poppins',sans-serif;text-shadow:2px 2px 4px rgba(0,0,0,0.2)}
-        
-        /* Welcome Message Box */
-        .welcome-box{background:linear-gradient(135deg,#e8f5e9 0%,#c8e6c9 100%);padding:40px;border-radius:20px;margin:40px auto;max-width:900px;box-shadow:0 8px 30px rgba(121,182,94,0.2);border-left:6px solid #2c5f2d}
-        .welcome-box p{color:#2c5f2d;font-size:1.2em;font-weight:500;line-height:2}
-        
-        /* Mobile Responsive */
+
+        /* Footer */
+        footer{text-align:center;padding:40px 20px;background:#1e2a33;color:#a8c0d0;margin-top:60px;border-top:3px solid #79b65e}
+
+        /* Mobile Adjustments */
         @media (max-width:768px){
-            header{padding:60px 20px}
-            header img{width:120px}
-            header h1{font-size:2.2em}
-            header p{font-size:1.1em}
-            
-            nav{gap:10px;padding:15px 20px}
-            nav a{padding:10px 18px;font-size:0.9em}
-            
-            section{padding:50px 20px}
-            h2{font-size:2em;margin-bottom:15px}
-            h2::after{width:70px;height:4px}
-            
-            .content-box{padding:30px 25px}
-            .instructors-container{grid-template-columns:1fr;gap:30px}
-            .instructor-photo-wrapper{width:170px;height:170px}
-            
-            .features-grid{grid-template-columns:1fr;gap:25px}
-            .feature-card{padding:35px 25px}
-            
-            .form-container{padding:20px}
-            .gallery{grid-template-columns:1fr;gap:20px}
-            .gallery img{height:220px}
-            
-            footer{padding:40px 20px}
-        }
-        
-        @media (max-width:480px){
-            header h1{font-size:1.8em}
-            header p{font-size:1em}
-            header img{width:100px}
-            
-            nav{gap:8px;padding:12px 15px}
-            nav a{padding:8px 14px;font-size:0.85em}
-            
-            section{padding:40px 15px}
-            h2{font-size:1.6em}
-            
-            .content-box{padding:25px 20px}
-            .instructor-photo-wrapper{width:150px;height:150px}
-            
-            .contact-info p{padding:20px 20px;font-size:1em}
-            
-            footer .footer-logo{font-size:1.4em}
+            header h1{font-size:2em}
+            nav{justify-content:flex-start}
         }
     </style>
 </head>
 <body>
+
     <header>
-        <img src="./yadidya-logo.png" alt="Yadidya Musicals Logo" onerror="this.style.display='none'">
         <h1>Yadidya Musicals</h1>
         <p>Equipping Young Musicians</p>
     </header>
-    <nav>
-        <a href="#" data-target="home" class="active">Home</a>
-        <a href="#" data-target="about">About</a>
-        <a href="#" data-target="music-instructors">Music Instructors</a>
-        <a href="#" data-target="online-classes">Online Classes</a>
-        <a href="#" data-target="enquiry">Enquiry</a>
-        <a href="#" data-target="gallery">Gallery</a>
-        <a href="#" data-target="contact">Contact</a>
+
+    <nav id="navbar">
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('about')">About</a>
+        <a onclick="showSection('guitar')">Guitar Lessons</a>
+        <a onclick="showSection('keyboard')">Keyboard Classes</a>
+        <a onclick="showSection('gallery')">Gallery</a>
+        <a onclick="showSection('contact')">Contact</a>
     </nav>
+
     <section id="home" class="active">
         <h2>Welcome to Yadidya Musicals</h2>
         <div class="section-divider"></div>
-        <div class="welcome-box">
-            <p>🎵 Learn guitar and keyboard with expert guidance from Mr. Samuel Yadidya. Explore lessons, make enquiries, and experience the joy of music through personalized training designed for all ages and skill levels.</p>
-        </div>
+        <p>Learn guitar and keyboard with expert guidance from Mr. Samuel Yadidya. We offer personalized training to help you find joy in music.</p>
         
         <div class="features-grid">
-            <div class="feature-card" onclick="goToSection('guitar-lessons')">
+            <div class="feature-card" onclick="showSection('guitar')">
                 <span class="icon">🎸</span>
                 <h3>Guitar Lessons</h3>
-                <p>Master acoustic guitar with personalized instruction for all skill levels, from beginners to advanced players.</p>
+                <p>Master the acoustic guitar with expert instruction.</p>
             </div>
-            <div class="feature-card" onclick="goToSection('keyboard-classes')">
+            <div class="feature-card" onclick="showSection('keyboard')">
                 <span class="icon">🎹</span>
                 <h3>Keyboard Classes</h3>
-                <p>Learn piano and keyboard fundamentals with expert guidance and hands-on practice sessions.</p>
-            </div>
-            <div class="feature-card" onclick="goToSection('online-classes')">
-                <span class="icon">💻</span>
-                <h3>Online & In-Home</h3>
-                <p>Flexible learning options with both virtual and in-person sessions available to fit your schedule.</p>
+                <p>Learn piano and keyboard fundamentals from day one.</p>
             </div>
         </div>
     </section>
-    <section id="guitar-lessons">
-        <h2>Guitar Lessons</h2>
-        <div class="section-divider"></div>
-        <div class="content-box">
-            <h3>🎸 Discover Guitar Mastery from the First Note</h3>
-            <p><strong>Beginner Classes in Music Notation, Guitar Basics, Chords & Melodies</strong></p>
-            <p style="margin-top:20px">Unlock the language of music through essential notations, master guitar fundamentals, and play chords and melodies right away—no prior experience needed. Perfect for aspiring worship leaders, hobbyists, or anyone in Visakhapatnam ready to strum with confidence and passion.</p>
-        </div>
-    </section>
-    <section id="keyboard-classes">
-        <h2>Keyboard Classes</h2>
-        <div class="section-divider"></div>
-        <div class="content-box">
-            <h3>🎹 Master the Keyboard from Day One</h3>
-            <p><strong>Beginner Classes in Music Theory, Keyboard Fundamentals, Chords & Melodies</strong></p>
-            <p style="margin-top:20px">Learn to read music notation, build a strong foundation in keyboard technique, and start playing beautiful chords and melodies from your very first lesson—absolutely no experience required. Ideal for aspiring worship musicians, creative enthusiasts, or anyone in Visakhapatnam eager to bring music to life through the keys.</p>
-        </div>
-    </section>
-    <section id="online-classes">
-        <h2>Online Classes</h2>
-        <div class="section-divider"></div>
-        <div class="content-box">
-            <h3>💻 Learn Music Your Way</h3>
-            <p><strong>Flexible Online & In-Home Guitar and Keyboard Lessons</strong></p>
-            <p style="margin-top:20px">Experience personalized music education that fits your schedule and lifestyle. Whether you prefer learning from the comfort of your home through live online sessions—accessible from any city with your own instrument—or having an instructor come to you for in-person lessons in Visakhapatnam, we bring quality guitar and keyboard training directly to you. Perfect for busy students, working professionals, or anyone seeking convenient, one-on-one musical instruction tailored to your pace and goals.</p>
-        </div>
-    </section>
+
     <section id="about">
         <h2>About Us</h2>
         <div class="section-divider"></div>
         <div class="content-box">
-            <p>Yadidya Musicals offers professional guitar and keyboard lessons for children and adults in Visakhapatnam, Andhra Pradesh. Guided by faith and passion for music, the school provides both in-home and online classes, bringing quality music education to every learner.</p>
-            <p style="margin-top:25px">Our mission is to equip young musicians with the skills, confidence, and joy needed to express themselves through music. We believe every student has unique potential, and our personalized approach helps unlock that musical journey.</p>
+            <p>Yadidya Musicals is dedicated to providing high-quality music education. Our mission is to inspire students to reach their full musical potential through structured lessons and professional mentorship.</p>
         </div>
     </section>
-    <section id="music-instructors">
-        <h2>Music Instructors</h2>
+
+    <section id="guitar">
+        <h2>Guitar Lessons</h2>
         <div class="section-divider"></div>
-        <div class="instructors-container">
-            <div class="instructor-card">
-                <div class="instructor-photo-wrapper">
-                    <img src="./founder-photo.jpg" alt="Mr. Samuel Yadidya" class="instructor-photo" onerror="this.classList.add('hidden')">
-                </div>
-                <div class="instructor-info">
-                    <h3>Mr. Samuel Yadidya</h3>
-                    <p class="instructor-role">Founder & Lead Instructor</p>
-                    <p>Mr. Samuel Yadidya founded Yadidya Musicals in 2024 to share his passion for guitar and keyboard with students of all ages. His personalized teaching approach helps each student discover their unique musical voice and build lasting confidence.</p>
-                </div>
-            </div>
-            <div class="instructor-card">
-                <div class="instructor-photo-wrapper">
-                    <img src="./ramya-yadidya.jpg" alt="Ramya Yadidya" class="instructor-photo" onerror="this.classList.add('hidden')">
-                </div>
-                <div class="instructor-info">
-                    <h3>Ramya Yadidya</h3>
-                    <p class="instructor-role">Administrator</p>
-                    <p>Ramya Yadidya manages the administrative operations of Yadidya Musicals, ensuring smooth coordination of classes, student enrollment, and communication with families. Her dedication keeps everything running seamlessly.</p>
-                </div>
-            </div>
-            <div class="instructor-card">
-                <div class="instructor-photo-wrapper">
-                    <img src="./emmanuel-samuel.png" alt="Emmanuel Samuel" class="instructor-photo" onerror="this.classList.add('hidden')">
-                </div>
-                <div class="instructor-info">
-                    <h3>Emmanuel Samuel</h3>
-                    <p class="instructor-role">Music Instructor</p>
-                    <p>Emmanuel Samuel brings dedication and expertise to teaching guitar, helping students develop their guitar skills with patience and encouragement. His supportive teaching style inspires students to reach their full potential.</p>
-                </div>
-            </div>
+        <div class="content-box">
+            <h3>Beginner to Advanced Mastery</h3>
+            <p>Unlock the language of music through essential notations, master guitar fundamentals, and play chords and melodies right away—no prior experience needed.</p>
         </div>
     </section>
-    <section id="enquiry">
-        <h2>Enquiry</h2>
+
+    <section id="keyboard">
+        <h2>Keyboard Classes</h2>
         <div class="section-divider"></div>
-        <p style="margin-bottom:30px;font-size:1.2em;color:#2c5f2d">📝 Fill out the form below and we'll get back to you soon!</p>
-        <div class="form-container">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf5dCiMSIhb5UJkoS-AoU8S2xVlVIiHzwj1vPoyU0Zh8k37YA/viewform?embedded=true" width="100%" height="1691" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <div class="content-box">
+            <h3>Learn the Keys</h3>
+            <p>Learn to read music notation, build a strong foundation in technique, and start playing beautiful melodies from your very first lesson.</p>
         </div>
     </section>
+
     <section id="gallery">
-        <h2>Image Gallery</h2>
+        <h2>Gallery</h2>
         <div class="section-divider"></div>
-        <p style="margin-bottom:40px;font-size:1.15em;color:#6c757d">📸 Explore our music classes and student performances</p>
         <div class="gallery">
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/300x250/79b65e/ffffff?text=Guitar+Class" alt="Guitar Class">
-            </div>
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/300x250/2c5f2d/ffffff?text=Keyboard+Lesson" alt="Keyboard Lesson">
-            </div>
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/300x250/79b65e/ffffff?text=Online+Session" alt="Online Session">
-            </div>
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/300x250/2c5f2d/ffffff?text=Student+Performance" alt="Student Performance">
-            </div>
+            <div class="gallery-item"><img src="https://placeholder.com"></div>
+            <div class="gallery-item"><img src="https://placeholder.com"></div>
+            <div class="gallery-item"><img src="https://placeholder.com"></div>
         </div>
     </section>
+
     <section id="contact">
         <h2>Contact Us</h2>
         <div class="section-divider"></div>
-        <div class="contact-info">
-            <p style="font-size:1.25em;color:#2c5f2d;font-weight:600">Get in touch with us for more information about our classes.</p>
-            <p class="location-link" onclick="openGoogleMaps()"><strong>Location:</strong> Visakhapatnam, Andhra Pradesh</p>
-            <p class="enquiry-link" onclick="goToSection('enquiry')"><strong>For enquiries,</strong> please use the "Enquiry" section above.</p>
+        <div class="content-box" style="text-align:center;">
+            <p><strong>Email:</strong> info@yadidyamusicals.com</p>
+            <p><strong>Location:</strong> Visakhapatnam, Andhra Pradesh</p>
         </div>
     </section>
+
     <footer>
-        <div class="footer-logo">🎵 Yadidya Musicals</div>
-        <p>© 2026 Yadidya Musicals | Equipping Young Musicians<br>Visakhapatnam, Andhra Pradesh</p>
+        <p>&copy; 2024 Yadidya Musicals | All Rights Reserved</p>
     </footer>
+
     <script>
-        const navLinks=document.querySelectorAll('nav a');
-        const sections=document.querySelectorAll('section');
-        
-        function goToSection(targetId){
-            sections.forEach(sec=>sec.classList.remove('active'));
-            navLinks.forEach(link=>link.classList.remove('active'));
-            document.getElementById(targetId).classList.add('active');
-            const activeLink=document.querySelector(`nav a[data-target="${targetId}"]`);
-            if(activeLink)activeLink.classList.add('active');
-            window.scrollTo({top:0,behavior:'smooth'});
-        }
-        
-        navLinks.forEach(link=>{
-            link.addEventListener('click',e=>{
-                e.preventDefault();
-                const target=link.getAttribute('data-target');
-                goToSection(target);
-            });
-        });
-        
-        function openGoogleMaps(){
-            window.open('https://www.google.com/maps/search/?api=1&query=Visakhapatnam,+Andhra+Pradesh,+India','_blank');
+        function showSection(id) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+            // Show the clicked section
+            document.getElementById(id).classList.add('active');
+            // Scroll to top
+            window.scrollTo({top: 0, behavior: 'smooth'});
         }
     </script>
+
 </body>
 </html>
