@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         *{box-sizing:border-box;margin:0;padding:0}
-        body{font-family:'Inter',sans-serif;background:#32434b;color:#2c3e50;overflow-x:hidden;line-height:1.8}
+        body{font-family:'Inter',sans-serif;background:#32434b;color:#ffffff;overflow-x:hidden;line-height:1.8}
         
         /* Enhanced Professional Header */
         header{background:linear-gradient(135deg,#2c5f2d 0%,#79b65e 100%);color:#fff;text-align:center;padding:80px 20px;position:relative;box-shadow:0 8px 30px rgba(0,0,0,0.15);overflow:hidden}
@@ -27,31 +27,31 @@
         nav a.active{background:linear-gradient(135deg,#79b65e 0%,#2c5f2d 100%);color:#fff;box-shadow:0 4px 15px rgba(121,182,94,0.3)}
         
         /* Enhanced Sections */
-        section{padding:80px 30px;max-width:1200px;margin:auto;display:none;animation:fadeInUp 0.8s ease;position:relative}
+        section{padding:80px 30px;max-width:1200px;margin:auto;display:none;animation:fadeInUp 0.8s ease;position:relative;background:#32434b}
         section.active{display:block}
         @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
         
         /* Beautiful Headings */
-        h2{text-align:center;color:#2c5f2d;margin-bottom:20px;font-family:'Poppins',sans-serif;font-weight:700;font-size:2.8em;position:relative;display:inline-block;width:100%;letter-spacing:1px}
+        h2{text-align:center;color:#79b65e;margin-bottom:20px;font-family:'Poppins',sans-serif;font-weight:700;font-size:2.8em;position:relative;display:inline-block;width:100%;letter-spacing:1px}
         h2::after{content:'';position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);width:100px;height:5px;background:linear-gradient(90deg,#79b65e,#2c5f2d);border-radius:3px}
         
         h3{color:#2c5f2d;font-size:1.6em;margin-bottom:20px;font-family:'Poppins',sans-serif;font-weight:600;text-align:center}
         
-        p{text-align:center;line-height:2;color:#495057;font-size:1.15em;font-weight:400}
+        p{text-align:center;line-height:2;color:#e0e0e0;font-size:1.15em;font-weight:400}
         
         /* Premium Content Box */
-        .content-box{background:#fff;padding:45px 40px;border-radius:20px;border:none;box-shadow:0 10px 40px rgba(0,0,0,0.08);margin:50px auto;max-width:950px;transition:all 0.4s ease;position:relative;overflow:hidden}
+        .content-box{background:#fff;padding:45px 40px;border-radius:20px;border:none;box-shadow:0 10px 40px rgba(0,0,0,0.3);margin:50px auto;max-width:950px;transition:all 0.4s ease;position:relative;overflow:hidden}
         .content-box::before{content:'';position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(180deg,#79b65e,#2c5f2d)}
-        .content-box:hover{box-shadow:0 15px 50px rgba(121,182,94,0.25);transform:translateY(-8px)}
+        .content-box:hover{box-shadow:0 15px 50px rgba(121,182,94,0.4);transform:translateY(-8px)}
         .content-box p{text-align:left;line-height:2;font-size:1.15em;color:#495057}
         .content-box h3{color:#2c5f2d;margin-bottom:25px}
         
         /* Premium Instructor Cards */
         .instructors-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;margin:60px auto;max-width:1200px}
-        .instructor-card{display:flex;flex-direction:column;align-items:center;background:#fff;padding:45px 35px;border-radius:25px;box-shadow:0 10px 40px rgba(0,0,0,0.08);transition:all 0.5s ease;position:relative;overflow:hidden}
+        .instructor-card{display:flex;flex-direction:column;align-items:center;background:#fff;padding:45px 35px;border-radius:25px;box-shadow:0 10px 40px rgba(0,0,0,0.3);transition:all 0.5s ease;position:relative;overflow:hidden}
         .instructor-card::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#79b65e,#2c5f2d);transform:scaleX(0);transition:transform 0.5s ease}
         .instructor-card:hover::before{transform:scaleX(1)}
-        .instructor-card:hover{box-shadow:0 15px 50px rgba(121,182,94,0.25);transform:translateY(-12px)}
+        .instructor-card:hover{box-shadow:0 15px 50px rgba(121,182,94,0.4);transform:translateY(-12px)}
         
         .instructor-photo-wrapper{width:200px;height:200px;border-radius:50%;border:6px solid #79b65e;box-shadow:0 10px 30px rgba(121,182,94,0.3);transition:all 0.6s ease;margin-bottom:25px;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative}
         .instructor-photo-wrapper:hover{transform:scale(1.1);box-shadow:0 15px 40px rgba(121,182,94,0.5);border-color:#2c5f2d}
@@ -65,33 +65,33 @@
         .instructor-role{color:#79b65e;font-size:1.1em;font-weight:600;margin-bottom:12px;text-transform:uppercase;letter-spacing:1px}
         
         /* Premium Form Container */
-        .form-container{max-width:900px;margin:50px auto;background:#fff;padding:40px;border-radius:25px;box-shadow:0 10px 40px rgba(0,0,0,0.08);transition:all 0.5s ease}
-        .form-container:hover{box-shadow:0 15px 50px rgba(121,182,94,0.25);transform:translateY(-8px)}
+        .form-container{max-width:900px;margin:50px auto;background:#fff;padding:40px;border-radius:25px;box-shadow:0 10px 40px rgba(0,0,0,0.3);transition:all 0.5s ease}
+        .form-container:hover{box-shadow:0 15px 50px rgba(121,182,94,0.4);transform:translateY(-8px)}
         .form-container iframe{border-radius:15px;width:100%;min-height:1691px;border:none}
         
         /* Premium Contact Info */
         .contact-info{max-width:750px;margin:50px auto;text-align:center}
-        .contact-info p{margin:25px 0;font-size:1.15em;padding:25px 30px;background:#fff;border-radius:15px;transition:all 0.4s ease;box-shadow:0 6px 25px rgba(0,0,0,0.08);border-left:6px solid #79b65e;cursor:pointer}
-        .contact-info p:hover{background:linear-gradient(135deg,#e8f5e9,#fff);transform:translateX(15px);box-shadow:0 10px 35px rgba(121,182,94,0.25)}
+        .contact-info p{margin:25px 0;font-size:1.15em;padding:25px 30px;background:#fff;border-radius:15px;transition:all 0.4s ease;box-shadow:0 6px 25px rgba(0,0,0,0.3);border-left:6px solid #79b65e;cursor:pointer;color:#495057}
+        .contact-info p:hover{background:linear-gradient(135deg,#e8f5e9,#fff);transform:translateX(15px);box-shadow:0 10px 35px rgba(121,182,94,0.4)}
         .contact-info p strong{color:#2c5f2d;font-weight:700}
         .location-link::after{content:'📍';margin-left:10px;font-size:1.2em}
         .enquiry-link::after{content:'✉️';margin-left:10px;font-size:1.2em}
         
         /* Premium Gallery */
         .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:50px}
-        .gallery-item{position:relative;overflow:hidden;border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,0.1);transition:all 0.5s ease;background:#fff}
+        .gallery-item{position:relative;overflow:hidden;border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,0.3);transition:all 0.5s ease;background:#fff}
         .gallery img{width:100%;height:280px;object-fit:cover;border-radius:20px;transition:all 0.6s ease;display:block}
         .gallery-item:hover img{transform:scale(1.12);filter:brightness(1.1)}
-        .gallery-item:hover{box-shadow:0 15px 45px rgba(121,182,94,0.35);transform:translateY(-10px)}
+        .gallery-item:hover{box-shadow:0 15px 45px rgba(121,182,94,0.5);transform:translateY(-10px)}
         .gallery-item::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to top,rgba(44,95,45,0.6),transparent);opacity:0;transition:opacity 0.4s ease;border-radius:20px}
         .gallery-item:hover::after{opacity:1}
         
         /* Premium Features Grid */
         .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:35px;margin:60px auto;max-width:1200px}
-        .feature-card{background:#fff;padding:45px 35px;border-radius:25px;text-align:center;transition:all 0.5s ease;box-shadow:0 8px 30px rgba(0,0,0,0.08);position:relative;overflow:hidden;cursor:pointer;border:2px solid transparent}
+        .feature-card{background:#fff;padding:45px 35px;border-radius:25px;text-align:center;transition:all 0.5s ease;box-shadow:0 8px 30px rgba(0,0,0,0.3);position:relative;overflow:hidden;cursor:pointer;border:2px solid transparent}
         .feature-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:6px;background:linear-gradient(90deg,#79b65e,#2c5f2d);transform:scaleX(0);transition:transform 0.5s ease}
         .feature-card:hover::before{transform:scaleX(1)}
-        .feature-card:hover{transform:translateY(-15px);box-shadow:0 15px 50px rgba(121,182,94,0.3);border-color:#79b65e}
+        .feature-card:hover{transform:translateY(-15px);box-shadow:0 15px 50px rgba(121,182,94,0.4);border-color:#79b65e}
         .feature-card .icon{font-size:3.5em;margin-bottom:20px;display:block;filter:drop-shadow(0 6px 12px rgba(121,182,94,0.3));transition:transform 0.4s ease}
         .feature-card:hover .icon{transform:scale(1.15) rotate(5deg)}
         .feature-card h3{color:#2c5f2d;margin-bottom:18px;font-size:1.4em;font-weight:700;font-family:'Poppins',sans-serif;letter-spacing:0.5px}
@@ -106,7 +106,7 @@
         footer .footer-logo{font-size:1.8em;color:#fff;margin-bottom:15px;font-weight:700;font-family:'Poppins',sans-serif;text-shadow:2px 2px 4px rgba(0,0,0,0.2)}
         
         /* Welcome Message Box */
-        .welcome-box{background:linear-gradient(135deg,#e8f5e9 0%,#c8e6c9 100%);padding:40px;border-radius:20px;margin:40px auto;max-width:900px;box-shadow:0 8px 30px rgba(121,182,94,0.2);border-left:6px solid #2c5f2d}
+        .welcome-box{background:linear-gradient(135deg,#e8f5e9 0%,#c8e6c9 100%);padding:40px;border-radius:20px;margin:40px auto;max-width:900px;box-shadow:0 8px 30px rgba(121,182,94,0.3);border-left:6px solid #2c5f2d}
         .welcome-box p{color:#2c5f2d;font-size:1.2em;font-weight:500;line-height:2}
         
         /* Mobile Responsive */
@@ -271,7 +271,7 @@
     <section id="enquiry">
         <h2>Enquiry</h2>
         <div class="section-divider"></div>
-        <p style="margin-bottom:30px;font-size:1.2em;color:#2c5f2d">📝 Fill out the form below and we'll get back to you soon!</p>
+        <p style="margin-bottom:30px;font-size:1.2em;color:#79b65e">📝 Fill out the form below and we'll get back to you soon!</p>
         <div class="form-container">
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf5dCiMSIhb5UJkoS-AoU8S2xVlVIiHzwj1vPoyU0Zh8k37YA/viewform?embedded=true" width="100%" height="1691" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
@@ -279,7 +279,7 @@
     <section id="gallery">
         <h2>Image Gallery</h2>
         <div class="section-divider"></div>
-        <p style="margin-bottom:40px;font-size:1.15em;color:#6c757d">📸 Explore our music classes and student performances</p>
+        <p style="margin-bottom:40px;font-size:1.15em;color:#e0e0e0">📸 Explore our music classes and student performances</p>
         <div class="gallery">
             <div class="gallery-item">
                 <img src="https://via.placeholder.com/300x250/79b65e/ffffff?text=Guitar+Class" alt="Guitar Class">
