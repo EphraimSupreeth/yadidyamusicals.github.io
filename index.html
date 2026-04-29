@@ -20,26 +20,6 @@
         header h1{font-family:'Poppins',sans-serif;font-weight:700;font-size:3.5em;margin:0;letter-spacing:2px;text-shadow:3px 3px 6px rgba(0,0,0,0.3);position:relative;z-index:2}
         header p{font-size:1.4em;color:#e8f5e9;margin-top:15px;font-weight:500;letter-spacing:1px;position:relative;z-index:2}
         
-        /* Hamburger menu icon */
-        .menu-toggle {
-            display: none; /* Hidden by default */
-            background: none;
-            border: none;
-            color: #79b65e;
-            font-size: 2.5em;
-            cursor: pointer;
-            padding: 10px;
-            position: absolute;
-            top: 25px;
-            left: 20px; /* Changed from right to left */
-            z-index: 1001;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
-        .menu-toggle:hover { 
-            background: rgba(121, 182, 94, 0.2);
-        }
-
         /* Modern Friendly Navigation */
         nav{background:#263640;backdrop-filter:blur(15px);display:flex;justify-content:center;align-items:center;gap:15px;padding:20px 30px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.1);border-bottom:3px solid #79b65e;flex-wrap:wrap}
         nav a{color:#ffffff;text-decoration:none;font-weight:600;font-family:'Poppins',sans-serif;transition:all 0.3s ease;position:relative;padding:12px 24px;border-radius:25px;font-size:0.95em;letter-spacing:0.5px;white-space:nowrap;background:transparent;border:2px solid transparent}
@@ -132,45 +112,14 @@
         
         /* Mobile Responsive */
         @media (max-width:768px){
-            header{padding:60px 20px; position: relative;} /* Added position: relative for menu-toggle positioning */
+            header{padding:60px 20px}
             header img{width:120px}
             header h1{font-size:2.2em}
             header p{font-size:1.1em}
             
-            .menu-toggle {
-                display: block; /* Show hamburger on mobile */
-            }
-
-            nav {
-                display: none; /* Hide nav by default on mobile */
-                flex-direction: column; /* Stack links vertically when shown */
-                width: 100%;
-                position: absolute;
-                top: 0; /* Adjust this to be below header and menu-toggle if needed */
-                left: 0;
-                padding-top: 150px; /* Space for the header and toggle button */
-                box-shadow: none; /* Remove redundant shadow */
-                border-bottom: none;
-                background: #263640; /* Ensure background when overlaying */
-                height: 100vh; /* Make it full height for overlay */
-                overflow-y: auto; /* Enable scrolling if many links */
-            }
+            nav{gap:10px;padding:15px 20px}
+            nav a{padding:10px 18px;font-size:0.9em}
             
-            nav.nav-open {
-                display: flex; /* Show nav when open */
-            }
-        
-            nav a {
-                padding: 15px 20px; /* Make links larger for touch */
-                border-radius: 0;
-                width: 100%; /* Full width for clickable area */
-                text-align: center;
-                border-bottom: 1px solid rgba(121,182,94,0.3); /* Separator for links */
-            }
-            nav a:last-child {
-                border-bottom: none;
-            }
-
             section{padding:50px 20px}
             h2{font-size:2em;margin-bottom:15px}
             h2::after{width:70px;height:4px}
@@ -194,12 +143,7 @@
             header p{font-size:1em}
             header img{width:100px}
             
-            .menu-toggle {
-                top: 15px;
-                font-size: 2em;
-            }
-
-            nav{padding-top: 120px;}
+            nav{gap:8px;padding:12px 15px}
             nav a{padding:8px 14px;font-size:0.85em}
             
             section{padding:40px 15px}
@@ -219,9 +163,8 @@
         <img src="./yadidya-logo.png" alt="Yadidya Musicals Logo" onerror="this.style.display='none'">
         <h1>Yadidya Musicals</h1>
         <p>Equipping Young Musicians</p>
-        <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
     </header>
-    <nav id="main-nav">
+    <nav>
         <a href="#" data-target="home" class="active">Home</a>
         <a href="#" data-target="about">About</a>
         <a href="#" data-target="music-instructors">Music Instructors</a>
@@ -369,9 +312,7 @@
     <script>
         const navLinks=document.querySelectorAll('nav a');
         const sections=document.querySelectorAll('section');
-        const menuToggle = document.querySelector('.menu-toggle');
-        const mainNav = document.getElementById('main-nav');
-
+        
         function goToSection(targetId){
             sections.forEach(sec=>sec.classList.remove('active'));
             navLinks.forEach(link=>link.classList.remove('active'));
@@ -386,17 +327,9 @@
                 e.preventDefault();
                 const target=link.getAttribute('data-target');
                 goToSection(target);
-                // Close the menu after clicking a link
-                if (window.innerWidth <= 768) { // Only close if on mobile view
-                    mainNav.classList.remove('nav-open');
-                }
             });
         });
         
-        menuToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('nav-open');
-        });
-
         function openGoogleMaps(){
             window.open('https://www.google.com/maps/search/?api=1&query=Visakhapatnam,+Andhra+Pradesh,+India','_blank');
         }
