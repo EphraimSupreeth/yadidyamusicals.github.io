@@ -1,1 +1,501 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Yadidya Musicals | Equipping Young Musicians</title> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"> <style> *{box-sizing:border-box;margin:0;padding:0} body{font-family:'Inter',sans-serif;background:#263640;color:#ffffff;overflow-x:hidden;line-height:1.8} header{background:#263640;color:#fff;text-align:center;padding:80px 20px;position:relative;box-shadow:0 8px 30px rgba(0,0,0,0.15);overflow:hidden} header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,0.05) 0%,transparent 70%);animation:headerPulse 15s ease-in-out infinite} @keyframes headerPulse{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(5%,5%) scale(1.1)}} header img{width:160px;height:auto;margin-bottom:25px;transition:all 0.6s ease;filter:drop-shadow(0 6px 12px rgba(0,0,0,0.3));position:relative;z-index:2} header img:hover{transform:scale(1.15) rotate(5deg)} header h1{font-family:'Poppins',sans-serif;font-weight:700;font-size:3.5em;margin:0;letter-spacing:2px;text-shadow:3px 3px 6px rgba(0,0,0,0.3);position:relative;z-index:2} header p{font-size:1.4em;color:#e8f5e9;margin-top:15px;font-weight:500;letter-spacing:1px;position:relative;z-index:2} /* Navigation with Menu Icon */ nav{background:#263640;backdrop-filter:blur(15px);display:flex;justify-content:space-between;align-items:center;padding:15px 25px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.1);border-bottom:3px solid #79b65e} .menu-icon{font-size:1.8em;color:#79b65e;cursor:pointer;display:none;transition:transform 0.3s ease} .menu-icon:hover{transform:scale(1.1)} .nav-links{display:flex;gap:15px;flex-wrap:wrap;justify-content:center;align-items:center} .nav-links a{color:#ffffff;text-decoration:none;font-weight:600;font-family:'Poppins',sans-serif;transition:all 0.3s ease;position:relative;padding:12px 24px;border-radius:25px;font-size:0.95em;letter-spacing:0.5px;white-space:nowrap;background:transparent;border:2px solid transparent} .nav-links a:hover{color:#fff;background:#79b65e;border-color:#79b65e;transform:translateY(-3px);box-shadow:0 6px 20px rgba(121,182,94,0.4)} .nav-links a.active{background:#79b65e;color:#fff;box-shadow:0 4px 15px rgba(121,182,94,0.3)} @media(max-width:768px){ .menu-icon{display:block} .nav-links{display:none;flex-direction:column;width:100%;background:#263640;border-top:3px solid #79b65e;padding:15px 0} .nav-links.show{display:flex} .nav-links a{padding:10px 20px;width:100%;text-align:center;border-radius:0;border-bottom:1px solid rgba(255,255,255,0.1)} } /* Sections and other styles */ section{padding:80px 30px;max-width:1200px;margin:auto;display:none;animation:fadeInUp 0.8s ease;position:relative;background:#263640} section.active{display:block} @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}} h2{text-align:center;color:#79b65e;margin-bottom:20px;font-family:'Poppins',sans-serif;font-weight:700;font-size:2.8em;position:relative;display:inline-block;width:100%;letter-spacing:1px} h2::after{content:'';position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);width:100px;height:5px;background:#79b65e;border-radius:3px} h3{color:#79b65e;font-size:1.6em;margin-bottom:20px;font-family:'Poppins',sans-serif;font-weight:600;text-align:center} p{text-align:center;line-height:2;color:#e0e0e0;font-size:1.15em;font-weight:400} .content-box{background:#263640;padding:45px 40px;border-radius:20px;border:2px solid #79b65e;box-shadow:0 10px 40px rgba(0,0,0,0.3);margin:50px auto;max-width:950px;transition:all 0.4s ease;position:relative;overflow:hidden} .content-box::before{content:'';position:absolute;top:0;left:0;width:6px;height:100%;background:#79b65e} .content-box:hover{box-shadow:0 15px 50px rgba(121,182,94,0.4);transform:translateY(-8px)} .content-box p{text-align:left;line-height:2;font-size:1.15em;color:#e0e0e0} .content-box h3{color:#79b65e;margin-bottom:25px} .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:35px;margin:60px auto;max-width:1200px} .feature-card{background:#263640;padding:45px 35px;border-radius:25px;text-align:center;transition:all 0.5s ease;box-shadow:0 8px 30px rgba(0,0,0,0.3);position:relative;overflow:hidden;cursor:pointer;border:2px solid #79b65e} .feature-card:hover{transform:translateY(-15px);box-shadow:0 15px 50px rgba(121,182,94,0.4)} .feature-card .icon{font-size:3.5em;margin-bottom:20px;display:block} .learn-more-badge{display:inline-block;margin-top:15px;padding:8px 20px;background:#79b65e;color:#fff;border-radius:20px;font-size:0.9em;font-weight:600;letter-spacing:0.5px;transition:all 0.3s ease} footer{text-align:center;padding:50px 30px;background:#263640;color:#e8f5e9;margin-top:80px;font-size:1.05em;position:relative;border-top:5px solid #79b65e;box-shadow:0 -8px 30px rgba(0,0,0,0.15)} footer .footer-logo{font-size:1.8em;color:#fff;margin-bottom:15px;font-weight:700;font-family:'Poppins',sans-serif;text-shadow:2px 2px 4px rgba(0,0,0,0.2)} </style> </head> <body> <header> <img src="./yadidya-logo.png" alt="Yadidya Musicals Logo" onerror="this.style.display='none'"> <h1>Yadidya Musicals</h1> <p>Equipping Young Musicians</p> </header> <nav> <div class="menu-icon" id="menu-icon">☰</div> <div class="nav-links" id="nav-links"> <a href="#" data-target="home" class="active">Home</a> <a href="#" data-target="about">About</a> <a href="#" data-target="music-instructors">Music Instructors</a> <a href="#" data-target="online-classes">Online Classes</a> <a href="#" data-target="enquiry">Enquiry</a> <a href="#" data-target="gallery">Gallery</a> <a href="#" data-target="contact">Contact</a> </div> </nav> <section id="home" class="active"> <h2>Welcome to Yadidya Musicals</h2> <div class="content-box"> <p>🎵 Learn guitar and keyboard with expert guidance from Mr. Samuel Yadidya. Explore lessons, make enquiries, and experience the joy of music through personalized training designed for all ages and skill levels.</p> </div> <div class="features-grid"> <div class="feature-card" onclick="goToSection('guitar-lessons')"> <span class="icon">🎸</span> <h3>Guitar Lessons</h3> <p>Master acoustic guitar with personalized instruction for all skill levels.</p> <span class="learn-more-badge">Click to Learn More →</span> </div> <div class="feature-card" onclick="goToSection('keyboard-classes')"> <span class="icon">🎹</span> <h3>Keyboard Classes</h3> <p>Learn piano and keyboard fundamentals with expert guidance.</p> <span class="learn-more-badge">Click to Learn More →</span> </div> <div class="feature-card" onclick="goToSection('online-classes')"> <span class="icon">💻</span> <h3>Online & In-Home</h3> <p>Flexible learning options with both virtual and in-person sessions.</p> <span class="learn-more-badge">Click to Learn More →</span> </div> </div> </section> <section id="guitar-lessons"> <h2>Guitar Lessons</h2> <div class="content-box"> <h3>🎸 Discover Guitar Mastery from the First Note</h3> <p><strong>Beginner Classes in Music Notation, Guitar Basics, Chords & Melodies</strong></p> <p>Unlock the language of music through essential notations and master guitar fundamentals.</p> </div> </section> <section id="keyboard-classes"> <h2>Keyboard Classes</h2> <div class="content-box"> <h3>🎹 Master the Keyboard from Day One</h3> <p><strong>Beginner Classes in Music Theory, Keyboard Fundamentals, Chords & Melodies</strong></p> <p>Learn to read music notation and start playing beautiful chords and melodies.</p> </div> </section> <section id="online-classes"> <h2>Online Classes</h2> <div class="content-box"> <h3>💻 Learn Music Your Way</h3> <p><strong>Flexible Online & In-Home Guitar and Keyboard Lessons</strong></p> <p>Experience personalized music education that fits your schedule and lifestyle.</p> </div> </section> <section id="about"> <h2>About Us</h2> <div class="content-box"> <p>Yadidya Musicals offers professional guitar and keyboard lessons for children and adults in Visakhapatnam, Andhra Pradesh.</p> <p>Our mission is to equip young musicians with the skills, confidence, and joy needed to express themselves through music.</p> </div> </section> <section id="music-instructors"> <h2>Music Instructors</h2> <div class="content-box"> <p>Meet our dedicated instructors who guide students with passion and expertise.</p> </div> </section> <section id="enquiry"> <h2>Enquiry</h2> <div class="content-box"> <p>📝 Fill out the form below and we'll get back to you soon!</p> <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf5dCiMSIhb5UJkoS-AoU8S2xVlVIiHzwj1vPoyU0Zh8k37YA/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> </div> </section> <section id="gallery"> <h2>Image Gallery</h2> <div class="content-box"> <p>📸 Explore our music classes and student performances.</p> </div> </section> <section id="contact"> <h2>Contact Us</h2> <div class="content-box"> <p><strong>Location:</strong> Visakhapatnam, Andhra Pradesh</p> <p><strong>For enquiries:</strong> Please use the "Enquiry" section above.</p> </div> </section> <footer> <div class="footer-logo">🎵 Yadidya Musicals</div> <p>© 2026 Yadidya Musicals | Equipping Young Musicians<br>Visakhapatnam, Andhra Pradesh</p> </footer> <script> const navLinks=document.querySelectorAll('.nav-links a'); const sections=document.querySelectorAll('section'); const menuIcon=document.getElementById('menu-icon'); const navMenu=document.getElementById('nav-links'); menuIcon.addEventListener('click',()=>{navMenu.classList.toggle('show')}); function goToSection(targetId){ sections.forEach(sec=>sec.classList.remove('active')); navLinks.forEach(link=>link.classList.remove('active')); document.getElementById(targetId).classList.add('active'); const activeLink=document.querySelector(`.nav-links a[data-target="${targetId}"]`); if(activeLink)activeLink.classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); navMenu.classList.remove('show'); } navLinks.forEach(link=>{ link.addEventListener('click',e=>{ e.preventDefault(); const target=link.getAttribute('data-target'); goToSection(target); }); }); </script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yadidya Musicals | Equipping Young Musicians</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #263640;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+        
+        header {
+            background: #263640;
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            animation: headerPulse 15s ease-in-out infinite;
+        }
+        
+        @keyframes headerPulse {
+            0%, 100% {
+                transform: translate(0,0) scale(1);
+            }
+            50% {
+                transform: translate(5%,5%) scale(1.1);
+            }
+        }
+        
+        header img {
+            width: 160px;
+            height: auto;
+            margin-bottom: 25px;
+            transition: all 0.6s ease;
+            filter: drop-shadow(0 6px 12px rgba(0,0,0,0.3));
+            position: relative;
+            z-index: 2;
+        }
+        
+        header img:hover {
+            transform: scale(1.15) rotate(5deg);
+        }
+        
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 3.5em;
+            margin: 0;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        header p {
+            font-size: 1.4em;
+            color: #e8f5e9;
+            margin-top: 15px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Navigation with Menu Icon */
+        nav {
+            background: #263640;
+            backdrop-filter: blur(15px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-bottom: 3px solid #79b65e;
+        }
+        
+        .menu-icon {
+            font-size: 1.8em;
+            color: #79b65e;
+            cursor: pointer;
+            display: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            background: transparent;
+            border: 2px solid transparent;
+        }
+        
+        .nav-links a:hover {
+            color: #fff;
+            background: #79b65e;
+            border-color: #79b65e;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(121,182,94,0.4);
+        }
+        
+        .nav-links a.active {
+            background: #79b65e;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(121,182,94,0.3);
+        }
+        
+        @media(max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #263640;
+                border-top: 3px solid #79b65e;
+                padding: 15px 0;
+            }
+            
+            .nav-links.show {
+                display: flex;
+            }
+            
+            .nav-links a {
+                padding: 10px 20px;
+                width: 100%;
+                text-align: center;
+                border-radius: 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+        }
+        
+        /* Sections and other styles */
+        section {
+            padding: 80px 30px;
+            max-width: 1200px;
+            margin: auto;
+            display: none;
+            animation: fadeInUp 0.8s ease;
+            position: relative;
+            background: #263640;
+        }
+        
+        section.active {
+            display: block;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        h2 {
+            text-align: center;
+            color: #79b65e;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 2.8em;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            letter-spacing: 1px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: #79b65e;
+            border-radius: 3px;
+        }
+        
+        h3 {
+            color: #79b65e;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        p {
+            text-align: center;
+            line-height: 2;
+            color: #e0e0e0;
+            font-size: 1.15em;
+            font-weight: 400;
+        }
+        
+        .content-box {
+            background: #263640;
+            padding: 45px 40px;
+            border-radius: 20px;
+            border: 2px solid #79b65e;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            margin: 50px auto;
+            max-width: 950px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: #79b65e;
+        }
+        
+        .content-box:hover {
+            box-shadow: 0 15px 50px rgba(121,182,94,0.4);
+            transform: translateY(-8px);
+        }
+        
+        .content-box p {
+            text-align: left;
+            line-height: 2;
+            font-size: 1.15em;
+            color: #e0e0e0;
+        }
+        
+        .content-box h3 {
+            color: #79b65e;
+            margin-bottom: 25px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            margin: 60px auto;
+            max-width: 1200px;
+        }
+        
+        .feature-card {
+            background: #263640;
+            padding: 45px 35px;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.5s ease;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid #79b65e;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 50px rgba(121,182,94,0.4);
+        }
+        
+        .feature-card .icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .learn-more-badge {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: #79b65e;
+            color: #fff;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 50px 30px;
+            background: #263640;
+            color: #e8f5e9;
+            margin-top: 80px;
+            font-size: 1.05em;
+            position: relative;
+            border-top: 5px solid #79b65e;
+            box-shadow: 0 -8px 30px rgba(0,0,0,0.15);
+        }
+        
+        footer .footer-logo {
+            font-size: 1.8em;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./yadidya-logo.png" alt="Yadidya Musicals Logo" onerror="this.style.display='none'">
+        <h1>Yadidya Musicals</h1>
+        <p>Equipping Young Musicians</p>
+    </header>
+    
+    <nav>
+        <div class="menu-icon" id="menu-icon">☰</div>
+        <div class="nav-links" id="nav-links">
+            <a href="#" data-target="home" class="active">Home</a>
+            <a href="#" data-target="about">About</a>
+            <a href="#" data-target="music-instructors">Music Instructors</a>
+            <a href="#" data-target="online-classes">Online Classes</a>
+            <a href="#" data-target="enquiry">Enquiry</a>
+            <a href="#" data-target="gallery">Gallery</a>
+            <a href="#" data-target="contact">Contact</a>
+        </div>
+    </nav>
+    
+    <section id="home" class="active">
+        <h2>Welcome to Yadidya Musicals</h2>
+        <div class="content-box">
+            <p>🎵 Learn guitar and keyboard with expert guidance from Mr. Samuel Yadidya. Explore lessons, make enquiries, and experience the joy of music through personalized training designed for all ages and skill levels.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card" onclick="goToSection('guitar-lessons')">
+                <span class="icon">🎸</span>
+                <h3>Guitar Lessons</h3>
+                <p>Master acoustic guitar with personalized instruction for all skill levels.</p>
+                <span class="learn-more-badge">Click to Learn More →</span>
+            </div>
+            <div class="feature-card" onclick="goToSection('keyboard-classes')">
+                <span class="icon">🎹</span>
+                <h3>Keyboard Classes</h3>
+                <p>Learn piano and keyboard fundamentals with expert guidance.</p>
+                <span class="learn-more-badge">Click to Learn More →</span>
+            </div>
+            <div class="feature-card" onclick="goToSection('online-classes')">
+                <span class="icon">💻</span>
+                <h3>Online & In-Home</h3>
+                <p>Flexible learning options with both virtual and in-person sessions.</p>
+                <span class="learn-more-badge">Click to Learn More →</span>
+            </div>
+        </div>
+    </section>
+    
+    <section id="guitar-lessons">
+        <h2>Guitar Lessons</h2>
+        <div class="content-box">
+            <h3>🎸 Discover Guitar Mastery from the First Note</h3>
+            <p><strong>Beginner Classes in Music Notation, Guitar Basics, Chords & Melodies</strong></p>
+            <p>Unlock the language of music through essential notations and master guitar fundamentals.</p>
+        </div>
+    </section>
+    
+    <section id="keyboard-classes">
+        <h2>Keyboard Classes</h2>
+        <div class="content-box">
+            <h3>🎹 Master the Keyboard from Day One</h3>
+            <p><strong>Beginner Classes in Music Theory, Keyboard Fundamentals, Chords & Melodies</strong></p>
+            <p>Learn to read music notation and start playing beautiful chords and melodies.</p>
+        </div>
+    </section>
+    
+    <section id="online-classes">
+        <h2>Online Classes</h2>
+        <div class="content-box">
+            <h3>💻 Learn Music Your Way</h3>
+            <p><strong>Flexible Online & In-Home Guitar and Keyboard Lessons</strong></p>
+            <p>Experience personalized music education that fits your schedule and lifestyle.</p>
+        </div>
+    </section>
+    
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="content-box">
+            <p>Yadidya Musicals offers professional guitar and keyboard lessons for children and adults in Visakhapatnam, Andhra Pradesh.</p>
+            <p>Our mission is to equip young musicians with the skills, confidence, and joy needed to express themselves through music.</p>
+        </div>
+    </section>
+    
+    <section id="music-instructors">
+        <h2>Music Instructors</h2>
+        <div class="content-box">
+            <p>Meet our dedicated instructors who guide students with passion and expertise.</p>
+        </div>
+    </section>
+    
+    <section id="enquiry">
+        <h2>Enquiry</h2>
+        <div class="content-box">
+            <p>📝 Fill out the form below and we'll get back to you soon!</p>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf5dCiMSIhb5UJkoS-AoU8S2xVlVIiHzwj1vPoyU0Zh8k37YA/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+    </section>
+    
+    <section id="gallery">
+        <h2>Image Gallery</h2>
+        <div class="content-box">
+            <p>📸 Explore our music classes and student performances.</p>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="content-box">
+            <p><strong>Location:</strong> Visakhapatnam, Andhra Pradesh</p>
+            <p><strong>For enquiries:</strong> Please use the "Enquiry" section above.</p>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-logo">🎵 Yadidya Musicals</div>
+        <p>© 2026 Yadidya Musicals | Equipping Young Musicians<br>Visakhapatnam, Andhra Pradesh</p>
+    </footer>
+    
+    <script>
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('section');
+        const menuIcon = document.getElementById('menu-icon');
+        const navMenu = document.getElementById('nav-links');
+        
+        menuIcon.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        function goToSection(targetId) {
+            sections.forEach(sec => sec.classList.remove('active'));
+            navLinks.forEach(link => link.classList.remove('active'));
+            document.getElementById(targetId).classList.add('active');
+            const activeLink = document.querySelector(`.nav-links a[data-target="${targetId}"]`);
+            if(activeLink) activeLink.classList.add('active');
+            window.scrollTo({top: 0, behavior: 'smooth'});
+            navMenu.classList.remove('show');
+        }
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = link.getAttribute('data-target');
+                goToSection(target);
+            });
+        });
+    </script>
+</body>
+</html>
